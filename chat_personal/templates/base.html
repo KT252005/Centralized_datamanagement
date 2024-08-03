@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="signupform">
+            <form class="form" method="POST" action="{% url 'sign_up' %}">
+                {% csrf_token %}
+                <p class="title">Register</p>
+                
+                {% if form.errors %}
+                <div class="form-errors">
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                            <li>{{ field }}: {{ errors|join:", " }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                
+                <div class="flex">
+                    <label>
+                        <input required name="username" placeholder="" type="text" class="input">
+                        <span>Username</span>
+                    </label>
+                    <label>
+                        <input required name="first_name" placeholder="" type="text" class="input">
+                        <span>Firstname</span>
+                    </label>
+                    <label>
+                        <input required name="last_name" placeholder="" type="text" class="input">
+                        <span>Lastname</span>
+                    </label>
+                </div>
+                
+                <label>
+                    <input required name="email" placeholder="" type="email" class="input">
+                    <span>Email</span>
+                </label>
+                
+                <label>
+                    <input required name="password" placeholder="" type="password" class="input">
+                    <span>Password</span>
+                </label>
+                
+                <label>
+                    <select name="role" class="input">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <span>Role</span>
+                </label>
+                
+                <button class="submit" type="submit">Submit</button>
+                <p class="signin">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
