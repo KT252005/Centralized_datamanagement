@@ -3,11 +3,20 @@ from .forms import SignupForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.http import HttpResponseForbidden
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,Group
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
+import tutorial.quickstart
+from tutorial.quickstart.serializers import GroupSerializer, UserSerializer
+from rest_framework import viewsets,permissions
 from django.contrib.auth.hashers import make_password
+
+
+
+
+
+
 # Create your views here.
 def home(request):
     return render(request,"login.html")
@@ -61,3 +70,22 @@ def login_user(request):
             return JsonResponse({'success': False, 'error': 'User does not exist'})
                
     return render(request,'login.html')             
+
+
+#****api****
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all().order_by('name')
+    serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]

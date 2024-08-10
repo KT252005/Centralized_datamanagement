@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'chat_personal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r"C:\Users\TIWARI KANAK\OneDrive\Desktop\Chat\chat_personal\chat_personal\templates"],
+        'DIRS': ["chat_personal\\templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
