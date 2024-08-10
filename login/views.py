@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,HttpResponse
 from .forms import SignupForm
+from .models import *
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.http import HttpResponseForbidden
@@ -10,7 +11,7 @@ import json
 import tutorial.quickstart
 from tutorial.quickstart.serializers import GroupSerializer, UserSerializer
 from rest_framework import viewsets,permissions
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password,check_password
 
 
 
@@ -19,7 +20,7 @@ from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 def home(request):
-    return render(request,"login.html")
+    return render(request,"index.html")
 
 def access(request):
       return render(request,"access.html")
@@ -27,7 +28,6 @@ def access(request):
 def registration(request):
     form = SignupForm()
     if request.method == 'POST':
-        print(request.POST)
         form = SignupForm(request.POST)
         if form.is_valid():
             user=form.save(commit=False)
@@ -35,14 +35,10 @@ def registration(request):
             user.save()
             return redirect('login')
         else:
-            print(form.errors)
             return render(request, 'base.html', {'form': form})   
     else:
-        if request.user.is_staff:
-            return render(request,"base.html")
-        else:
-            return HttpResponseForbidden('<h1> 403 Forbidden <br>You are not allowed to access this page.</h1>')
-
+        return render(request, 'base.html', {'form': form})   
+    
 
 def login_user(request):
     if request.method == 'POST':

@@ -10,7 +10,8 @@ urlpatterns = [
     path('',views.home,name="login"),
     path('signup.html',views.registration,name="sign_up"),
     path('access.html',views.access,name="access"),
-    path('login.html',views.home),
+    path('login_user',views.login_user,name="login_user"),
     path('rest-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('rest/', include(router.urls)),
+    
 ]

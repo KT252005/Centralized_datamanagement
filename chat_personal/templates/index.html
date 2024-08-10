@@ -1,11 +1,35 @@
+<!-- index.html -->
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>access</title>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="static\loginform.css">
 </head>
-<body bgcolor="red">
-    
+<body>
+    <div class="container">
+        <h2 class="">Sign In</h2>
+        <form id="login-form" method="post" action="#">
+            {% csrf_token %}
+            <label for="role">Role:
+                <select id="role" name="role">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            </label><br>
+
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Username"><br><br>
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Password"><br><br>
+            
+            <button type="submit" class="sign-in" >Sign In</button>
+        </form>
+        <div class="login-message">Don't have a account?<a href="signup.html">Sign Up</a></div>
+    </div>
+
+    <script src="static\login.js"></script>
 </body>
 </html>
