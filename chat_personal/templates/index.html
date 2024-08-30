@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="static\loginform.css">
+    <link rel="stylesheet" href="{% static 'loginform.css' %}">
 </head>
 <body>
     <div class="container">
@@ -15,7 +15,6 @@
             {% csrf_token %}
             <label for="role">Role:
                 <select id="role" name="role">
-                <option value="admin">Admin</option>
                 <option value="user">User</option>
             </select>
             </label><br>
@@ -30,6 +29,6 @@
         <div class="login-message">Don't have a account?<a href="signup.html">Sign Up</a></div>
     </div>
 
-    <script src="static\login.js"></script>
+    <script src="{% static 'login.js' %}"></script>
 </body>
 </html>

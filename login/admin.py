@@ -3,4 +3,5 @@ from .models import *
 
 
 # Register your models here.
-admin.site.register(Chat_signup)
+admin.site.register(signup_data)
+admin.site.register(Organizations_data)

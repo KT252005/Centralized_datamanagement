@@ -6,8 +6,9 @@ from django.contrib import messages
 from django.http import HttpResponseForbidden
 from django.contrib.auth.models import User,Group
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 import json
+from django.views.decorators.csrf import csrf_exempt
+from .Serializers import Organizations_Serializer
 import tutorial.quickstart
 from tutorial.quickstart.serializers import GroupSerializer, UserSerializer
 from rest_framework import viewsets,permissions
@@ -23,7 +24,7 @@ def home(request):
     return render(request,"index.html")
 
 def access(request):
-      return render(request,"access.html")
+      return render(request,"Home_Dashboard.html")
 
 def registration(request):
     form = SignupForm()
@@ -48,14 +49,14 @@ def login_user(request):
         user_type = data['role']
         
         try:
-            user = Chat_signup.objects.get(username=username)
+            user = signup_data.objects.get(username=username)
             if check_password(password, user.password) and user.role == user_type:
                 # Mock login by setting session or token
                 request.session['user_id'] = user.id
                 request.session['username'] = user.username
                 request.session['role'] = user.role
                 if user_type == 'user':
-                    return JsonResponse({'success': True, 'redirect_url': 'access.html'})
+                    return JsonResponse({'success': True, 'redirect_url': 'dashboard.html'})
                 elif user_type == 'admin':
                     return JsonResponse({'success': True, 'redirect_url': '/admin/'})
                 else:
@@ -85,3 +86,9 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all().order_by('name')
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+    
+    
+class Organizationviewset(viewsets.ModelViewSet):
+    queryset=Organizations_data.objects.all().order_by('Gst_no','Company_name','Domain','Address','city','State','Pincode','contact_info')    
+    serializer_class=Organizations_Serializer
+    
