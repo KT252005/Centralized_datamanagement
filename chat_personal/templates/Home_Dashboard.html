@@ -8,13 +8,119 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+      /* Apply the theme colors */
+:root {
+    --dark-navy: #0d1b2a;
+    --navy: #1b263b;
+    --gray-blue: #415a77;
+    --light-blue: #778da9;
+    --off-white: #e0e1dd;
 }
 
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--off-white);
+    color: var(--dark-navy);
+}
+
+/* Organization Section Styling */
+.organization-section {
+
+    padding: 50px;
+    background-color: var(--gray-blue);
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.organization-title h2 {
+    text-align: center;
+    color: var(--navy);
+    font-size: 2.5rem;
+    margin-top: 45px;
+}
+
+.organization-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chart-container {
+    flex: 1;
+    max-width: 40%;
+}
+
+.chart-container img {
+    width: 100%;
+    height: auto;
+ 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-table {
+    flex: 1;
+    max-width: 50%;
+    background-color: var(--light-blue);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--off-white);
+}
+
+.benefits-table h3 {
+    margin-bottom: 20px;
+    color: var(--off-white);
+    text-align: center;
+ border-radius: 10px;
+}
+
+.benefits-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.benefits-table th, .benefits-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--light-blue);
+}
+
+.benefits-table th {
+    background-color: var(--navy);
+    color: var(--off-white);
+    font-weight: bold;
+}
+
+.benefits-table td {
+    background-color: var(--light-blue);
+}
+
+.benefits-table tr:hover {
+    background-color: var(--navy);
+}
+/* Register Now Button Styling */
+.register-button {
+    margin-bottom: 90%;
+    bottom: 90%;
+    left: 12.5%;
+    transform: translate(-50%, -50%);
+    padding: 35px 30px;
+    background-color: var(--navy);
+    color: var(--off-white);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.register-button:hover {
+    background-color: var(--gray-blue);
+}
 header {
     background-color: #ffffff;
     border-bottom: 2px solid #dddddd;
@@ -90,8 +196,8 @@ nav ul li a:hover {
 
 
 .hero-section {
-    {% comment %} background: url("bg0.jpg") no-repeat center center/cover; {% endcomment %}
-    height: 500px;
+    background: url("{% static 'img\bg0.jpg' %}") no-repeat center center/cover;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,18 +232,7 @@ nav ul li a:hover {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-.content-o{
-    padding: 100px 20px 60px;
-    background-color: #b0cade;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 1200px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-   
-    
-}
+
 .content-section h2 {
     color: #333333;
     margin-bottom: 20px;
@@ -154,77 +249,22 @@ nav ul li a:hover {
 .content-section:nth-child(odd) {
     background-color: #ffffff;
 }
-/* Organization Section Styling */
 
-/* Organization Section Styling */
-
-.chart-container img {
-    width:75%;
-    height: 75%;
-    border-radius: 8px;
-}
-.chart-container {
-    flex: 1;
-    /* Adjusted to make room for the center text */
-    position: relative;
-}
-
-.center-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.fund-button {
+    margin-bottom: 90%;
+    bottom: 90%;
+    left: 12.5%;
     transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    background-color: navy ;
+    color: var(--off-white);
+    border: none;
+    border-radius: 5px;
     text-align: center;
-    z-index: 1;
-}
-
-.center-text h2 {
-    margin-top: 400px;
-    font-size: 2rem;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7); /* Slight background to make it stand out */
-    padding: 10px 20px;
-    border-radius: 8px;
-}
-
-.benefits-table {
-    flex: 1;
-    max-width: 30%; /* Adjusted to fit the section */
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-}
-
-.benefits-table h3 {
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-}
-
-.benefits-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.benefits-table th, .benefits-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-.benefits-table th {
-    background-color: #f2f2f2;
+    text-decoration: none;
     font-weight: bold;
-}
-
-.benefits-table td {
-    background-color: #fff;
-}
-
-.benefits-table tr:hover {
-    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
 
@@ -326,11 +366,18 @@ footer {
     </style>
 </head>
 <body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
     <!-- Header Section -->
     
     <header>
         <div class="logo">
-            <img src="sih.png" alt="Project Logo">
+            <img src="{% static 'img\WhatsApp Image 2024-08-30 at 19.32.27_a150182e.jpg' %}" alt="Project Logo">
         </div>
         <nav>
             <ul class="centered-menu">
@@ -361,55 +408,46 @@ footer {
             <p>Transforming Ideas into Reality with Advanced Monitoring & Management Systems</p>
         </div>
     </section>
-
-    <!-- Content Sections -->
-  
-    <section id="organizations" class="content-o"> 
-    <!-- Organization Section -->
-<section id="organizations">
-    <div class="organization-container">
-        <!-- Chart Image with Clickable "Register Now" -->
-        <div class="chart-container">
-            <img src="{% static 'images/org_chart_final.png' %}" alt="Organization Chart" usemap="#orgChartMap">
-            <map name="orgChartMap">
-                <!-- Adjust the coordinates as necessary to fit the "Register Now" text -->
-                <area shape="rect" coords="375,175,525,225" href="#register-form" alt="Register Now">
-            </map>
-        </div>
-
-        <!-- Centered Text -->
-        <div class="center-text">
-            <h2>Organization Hub</h2>
-        </div>
-
-        <!-- Benefits Table -->
-        <div class="benefits-table">
-            <h3>Benefits of Organization</h3>
-            <table>
-                <tr>
-                    <th>Benefit</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>Networking</td>
-                    <td>Expand your professional network with key industry leaders.</td>
-                </tr>
-                <tr>
-                    <td>Resources</td>
-                    <td>Access to exclusive resources and tools for innovation.</td>
-                </tr>
-                <tr>
-                    <td>Support</td>
-                    <td>Receive guidance and support from experienced professionals.</td>
-                </tr>
-                <tr>
-                    <td>Funding Opportunities</td>
-                    <td>Get connected with potential investors and funding sources.</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</section>
+        <section id="organizations" class="organization-section">
+            <div class="organization-title">
+                <h2>ORGANIZATION-HUB</h2>
+            </div>
+            <div class="organization-content">
+            
+                <div class="chart-container">
+                    <!-- Register Now Button -->
+                    <a href="Registration.html" class="register-button">Register Now</a>
+                </div>
+                        
+                <!-- Benefits Table -->
+                <div class="benefits-table">
+                    <h3>Benefits</h3>
+                    <table>
+                        <tr>
+                            <th>Benefit</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Streamlined Processes</td>
+                            <td>Optimizes the management of research, innovation, and startups.</td>
+                        </tr>
+                        <tr>
+                            <td>Enhanced Collaboration</td>
+                            <td>Facilitates partnerships between academic institutions and startups.</td>
+                        </tr>
+                        <tr>
+                            <td>Resource Access</td>
+                            <td>Provides easy access to funding, resources, and support systems.</td>
+                        </tr>
+                        <tr>
+                            <td>Transparency</td>
+                            <td>Ensures transparency in project management and funding.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+ 
 
 
    <section id="projects" class="content-section">
@@ -426,7 +464,7 @@ footer {
     </section>
     <section id="funding" class="content-section">
         <h2>Funding</h2>
-        <p>Content about funding...</p>
+        <a href="fund.html" class="fund-button">Funds</a>
     </section>
     <section id="collaborations" class="content-section">
         <h2>Collaborations</h2>
@@ -496,6 +534,6 @@ footer {
         <p>&copy; 2024 Gujarat Innovation. All Rights Reserved.</p>
     </div>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
