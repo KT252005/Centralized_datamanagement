@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            height: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            background-image: url("fund2.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            background: #b6cadb;
+            color: #fff;
+            padding: 10px;
+            justify-content: space-around;
+        }
+
+        .tab-link {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: #666;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .tab-link.active {
+            background: #777;
+        }
+
+        .tab-link:hover {
+            background: #888;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #b6cadb;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            background: #f9f9f9;
+        }
+
+        .summary {
+            padding: 20px;
+            background: #fff;
+            margin: 20px 0 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .summary th, .summary td {
+            padding: 10px 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .summary th {
+            background: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FUNDING MANAGEMENT</h1>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <div class="tab-link active" data-tab="research">Research Projects</div>
+            <div class="tab-link" data-tab="startup">Startups</div>
+            <div class="tab-link" data-tab="innovation">Innovations</div>
+            <div class="tab-link" data-tab="patent">Patents</div>
+        </div>
+
+        <div class="tab-contents">
+            <div id="research" class="tab-content active">
+                <h2>Research Projects</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account No</th>
+                            <th>Project Name</th>
+                            <th>Organization/Person</th>
+                            <th>Funding Status</th>
+                            <th>Amount</th>
+                            <th>Amount Used</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>123456</td><td>Research A</td><td>Org X</td><td>Completed</td><td>$200,000</td><td>$180,000</td><td>2023-01-15</td></tr>
+                        <tr><td>234567</td><td>Research B</td><td>Org Y</td><td>Ongoing</td><td>$250,000</td><td>$120,000</td><td>2023-03-22</td></tr>
+                        <tr><td>345678</td><td>Research C</td><td>Org Z</td><td>Completed</td><td>$300,000</td><td>$290,000</td><td>2023-06-30</td></tr>
+                        <tr><td>456789</td><td>Research D</td><td>Org A</td><td>Ongoing</td><td>$220,000</td><td>$75,000</td><td>2023-08-15</td></tr>
+                        <tr><td>567890</td><td>Research E</td><td>Org B</td><td>Completed</td><td>$270,000</td><td>$260,000</td><td>2023-10-05</td></tr>
+                        <tr><td>678901</td><td>Research F</td><td>Org C</td><td>Ongoing</td><td>$320,000</td><td>$90,000</td><td>2024-01-20</td></tr>
+                        <tr><td>789012</td><td>Research G</td><td>Org D</td><td>Completed</td><td>$350,000</td><td>$340,000</td><td>2024-03-15</td></tr>
+                        <tr><td>890123</td><td>Research H</td><td>Org E</td><td>Ongoing</td><td>$300,000</td><td>$150,000</td><td>2024-05-30</td></tr>
+                        <tr><td>901234</td><td>Research I</td><td>Org F</td><td>Completed</td><td>$280,000</td><td>$270,000</td><td>2024-07-25</td></tr>
+                        <tr><td>123456</td><td>Research J</td><td>Org G</td><td>Ongoing</td><td>$310,000</td><td>$200,000</td><td>2024-10-10</td></tr>
+                        <tr><td>234567</td><td>Research K</td><td>Org H</td><td>Completed</td><td>$330,000</td><td>$320,000</td><td>2024-12-15</td></tr>
+                        <tr><td>345678</td><td>Research L</td><td>Org I</td><td>Ongoing</td><td>$340,000</td><td>$110,000</td><td>2025-02-25</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <table>
+                        <tr>
+                            <th>Total Projects</th>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>Total Startups</th>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <th>Total Innovations</th>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th>Total Patents</th>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="startup" class="tab-content">
+                <h2>Startups</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account No</th>
+                            <th>Startup Name</th>
+                            <th>Person/Organization</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Amount Used</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>111222</td><td>Startup A1</td><td>Person A1</td><td>Active</td><td>$500,000</td><td>$300,000</td><td>2023-02-10</td></tr>
+                        <tr><td>222333</td><td>Startup B2</td><td>Person B2</td><td>Closed</td><td>$600,000</td><td>$600,000</td><td>2023-04-25</td></tr>
+                        <tr><td>333444</td><td>Startup C3</td><td>Person C3</td><td>Active</td><td>$700,000</td><td>$400,000</td><td>2023-07-15</td></tr>
+                        <tr><td>444555</td><td>Startup D4</td><td>Person D4</td><td>Closed</td><td>$550,000</td><td>$550,000</td><td>2023-09-10</td></tr>
+                        <tr><td>555666</td><td>Startup E5</td><td>Person E5</td><td>Active</td><td>$800,000</td><td>$500,000</td><td>2023-11-20</td></tr>
+                        <tr><td>666777</td><td>Startup F6</td><td>Person F6</td><td>Closed</td><td>$750,000</td><td>$750,000</td><td>2024-01-30</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <table>
+                        <tr>
+                            <th>Total Projects</th>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>Total Startups</th>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <th>Total Innovations</th>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th>Total Patents</th>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="innovation" class="tab-content">
+                <h2>Innovations</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account No</th>
+                            <th>Innovation Name</th>
+                            <th>Person/Organization</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Amount Used</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>777888</td><td>Innovation X</td><td>Org X</td><td>Ongoing</td><td>$400,000</td><td>$250,000</td><td>2023-03-15</td></tr>
+                        <tr><td>888999</td><td>Innovation Y</td><td>Org Y</td><td>Completed</td><td>$350,000</td><td>$340,000</td><td>2023-05-10</td></tr>
+                        <tr><td>999111</td><td>Innovation Z</td><td>Org Z</td><td>Ongoing</td><td>$450,000</td><td>$200,000</td><td>2023-07-25</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <table>
+                        <tr>
+                            <th>Total Projects</th>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>Total Startups</th>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <th>Total Innovations</th>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th>Total Patents</th>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="patent" class="tab-content">
+                <h2>Patents</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account No</th>
+                            <th>Patent Name</th>
+                            <th>Person/Organization</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Amount Used</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>101112</td><td>Patent X1</td><td>Person X1</td><td>Approved</td><td>$100,000</td><td>$90,000</td><td>2023-09-05</td></tr>
+                        <tr><td>121314</td><td>Patent Y2</td><td>Person Y2</td><td>Pending</td><td>$150,000</td><td>$75,000</td><td>2024-01-18</td></tr>
+                        <tr><td>141516</td><td>Patent Z3</td><td>Person Z3</td><td>Approved</td><td>$200,000</td><td>$180,000</td><td>2024-04-25</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <table>
+                        <tr>
+                            <th>Total Projects</th>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>Total Startups</th>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <th>Total Innovations</th>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th>Total Patents</th>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            tabLinks.forEach(link => link.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            link.classList.add('active');
+            document.getElementById(link.dataset.tab).classList.add('active');
+        });
+    });
+</script>
+</html>

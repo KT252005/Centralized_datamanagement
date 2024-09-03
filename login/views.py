@@ -20,6 +20,10 @@ from django.urls import reverse
 
 
 # Create your views here.
+def user(request):
+    return render(request,"base.html")
+
+
 
 def fund(request):
     return render(request,"fund.html")
@@ -100,6 +104,7 @@ def registration(request):
 def login_user(request):
     if request.method == 'POST':
         data = json.loads(request.body)
+        print(data)
         username = data['username']
         password = data['password']
         user_type = data['role']
@@ -112,17 +117,17 @@ def login_user(request):
                 request.session['username'] = user.username
                 request.session['role'] = user.role
                 if user_type == 'user':
-                    return JsonResponse({'success': True, 'redirect_url': '/register_as_org.html'})
+                    return JsonResponse({'success': True, 'redirect_url': '/'})
                 elif user_type == 'admin':
                     return JsonResponse({'success': True, 'redirect_url': '/admin/'})
                 else:
                     return JsonResponse({'success': False, 'error': 'Invalid user type'})
             else:
                 return JsonResponse({'success': False, 'error': 'Invalid credentials or user type'})
-        except Chat_signup.DoesNotExist:
+        except signup_data.DoesNotExist:
             return JsonResponse({'success': False, 'error': 'User does not exist'})
                
-    return render(request,'login.html')             
+    return render(request,'base.html')             
 
 
 #****api****
