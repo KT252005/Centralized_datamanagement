@@ -8,25 +8,20 @@ from django.contrib.auth.models import User,Group
 from django.http import JsonResponse
 import json
 from django.views.decorators.csrf import csrf_exempt
-from .Serializers import Organizations_Serializer
+from .Serializers import AllocationSerializer
 import tutorial.quickstart
 from tutorial.quickstart.serializers import GroupSerializer, UserSerializer
 from rest_framework import viewsets,permissions
 from django.contrib.auth.hashers import make_password,check_password
 from django.urls import reverse
 
-
-
-
-
-# Create your views here.
+# render  functions
 def user(request):
     return render(request,"base.html")
 
-
-
 def fund(request):
     return render(request,"fund.html")
+
 def home(request):
     return render(request,"index.html")
 
@@ -35,6 +30,12 @@ def access(request):
 
 def signup(request):
     return render(request,"base.html")
+
+def startup_page(request):
+    return render(request,"startup.html")
+
+def  projects_page(request):
+    return render(request,"project.html")
 
 #from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -94,7 +95,7 @@ def registration(request):
             user=form.save(commit=False)
             user.password = make_password(form.cleaned_data['password']) 
             user.save()
-            return redirect('login')
+            return redirect('/login/')
         else:
             return render(request, 'base.html', {'form': form})   
     else:
@@ -149,10 +150,17 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     
     
-class Organizationviewset(viewsets.ModelViewSet):
-    queryset=Organizations_data.objects.all().order_by('Gst_no','Company_name','Domain','Address','city','State','Pincode','contact_info')    
-    serializer_class=Organizations_Serializer
+# class Organizationviewset(viewsets.ModelViewSet):
+#     queryset=Organizations_data.objects.all().order_by('Gst_no','Company_name','Domain','Address','city','State','Pincode','contact_info')    
+#     serializer_class=Organizations_Serializer
     
+class AllocationViewSet(viewsets.ModelViewSet):
+      queryset=Allocation.objects.all().order_by('user',
+            'Startup_name',
+            'contact_info',
+            'created_at',
+            'updated_at')    
+      serializer_class=AllocationSerializer
     
 # def user_info_api(request, username):
 #     try:

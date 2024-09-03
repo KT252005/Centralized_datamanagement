@@ -14,17 +14,23 @@ class signup_data(models.Model):
         return self.username
 
 
-class Organizations_data(models.Model):
-    Gst_no = models.CharField(max_length=16, unique=True)
-    Company_name = models.CharField(max_length=50)
-    Domain = models.CharField(max_length=100)
-    Address = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
-    State = models.CharField(max_length=50)
-    Pincode = models.CharField(max_length=6, unique=True)
+class Allocation(models.Model):
+    user = models.ForeignKey("signup_data", verbose_name=(""), on_delete=models.CASCADE)
+    Startup_name = models.CharField(max_length=50)
     contact_info = models.CharField(max_length=10, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)  # Use auto_now=True to track last modification time
-
+     
     def __str__(self):
-        return self.Company_name
+        return self.user.username
+
+class funding(models.Model):
+    user= models.ForeignKey("signup_data", verbose_name=("User"), on_delete=models.CASCADE)
+    Startup_name = models.CharField(max_length=50)
+    Amount=models.CharField(max_length=20)
+    Amount_used = models.CharField(max_length=20)
+    Date=models.DateField( auto_now_add=True)
+    
+    def __str__(self):
+        return self.user.username
+    

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +16,10 @@
         header {
             position: relative;
             height: 250px;
-            background-color: #333;
+            background-color: black;
             color: #fff;
             text-align: center;
-            background-image: url("fund2.jpg");
+            background-image: url("{% static "img\fund2.jpg" %}");
             background-size: cover;
             background-position: center;
             display: flex;
@@ -48,18 +49,18 @@
             flex: 1;
             text-align: center;
             padding: 10px;
-            background: #666;
+            background:  #084f66;
             margin: 0 5px;
             border-radius: 5px;
             transition: background 0.3s ease;
         }
 
         .tab-link.active {
-            background: #777;
+            background: #084f66;
         }
 
         .tab-link:hover {
-            background: #888;
+            background: black;
         }
 
         .tab-content {

@@ -1,0 +1,298 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECTS </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            height: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            background-image: url("{% static "img/fund11.png" %}");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            background: #b6cadb;
+            color: #fff;
+            padding: 10px;
+            justify-content: space-around;
+        }
+
+        .tab-link {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: #135779;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .tab-link.active {
+            background: #135779;
+        }
+
+        .tab-link:hover {
+            background: #090909;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #b6cadb;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            background: #f9f9f9;
+        }
+
+        
+    </style>
+</head>
+<body>
+        <header>
+            <h1>Projects</h1>
+        </header>
+    
+        <main>
+            <div class="tabs">
+                <div class="tab-link active" data-tab="Industrial Development">Industrial Development</div>
+                <div class="tab-link" data-tab="Infrastructure">Infrastructure</div>
+                <div class="tab-link" data-tab="Renewable Energy">Renewable Energy</div>
+                <div class="tab-link" data-tab="Health care">Health care</div>
+                <div class="tab-link" data-tab="IT">IT</div>
+                <div class="tab-link" data-tab="Agriculture">Agriculture</div>
+                <div class="tab-link" data-tab="Education and Skill">Education and Skill</div>
+            </div>
+    
+            <div class="tab-contents">
+                <div id="Industrial Development" class="tab-content active">
+                    <h2>Industrial Development</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Organization/Person</th>
+                                <th>Phone no.</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Research A</td><td>Org X</td><td>5416454455</td><td>suart</td></tr>
+                            <tr><td>Research B</td><td>Org Y</td><td>1412535456</td><td>suart</td></tr>
+                            <tr><td>Research C</td><td>Org Z</td><td>7988898989</td><td>suart</td></tr>
+                            <tr><td>Research D</td><td>Org A</td><td>2222222222</td><td>suart</td></tr>
+                            <tr><td>Research E</td><td>Org B</td><td>3333333333</td><td>suart</td></tr>
+                            <tr><td>Research F</td><td>Org C</td><td>4444444444</td><td>suart</td></tr>
+                            <tr><td>Research G</td><td>Org D</td><td>5555555555</td><td>suart</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div id="Infrastructure" class="tab-content">
+                    <h2>Infrastructure</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                               <th>Project Name</th>
+                                <th>Organization/Person</th>
+                                <th>Phone no.</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Research A</td><td>Org X</td><td>5416454455</td><td>suart</td></tr>
+                            <tr><td>Research B</td><td>Org Y</td><td>1412535456</td><td>suart</td></tr>
+                            <tr><td>Research C</td><td>Org Z</td><td>7988898989</td><td>suart</td></tr>
+                            <tr><td>Research D</td><td>Org A</td><td>2222222222</td><td>suart</td></tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div id="Renewable Energy" class="tab-content">
+                    <h2>Renewable Energy</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Organization/Person</th>
+                                <th>Phone no.</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr><td>Research A</td><td>Org X</td><td>5416454455</td><td>suart</td></tr>
+                            <tr><td>Research B</td><td>Org Y</td><td>1412535456</td><td>suart</td></tr>
+                            <tr><td>Research C</td><td>Org Z</td><td>7988898989</td><td>suart</td></tr>
+                            <tr><td>Research D</td><td>Org A</td><td>2222222222</td><td>suart</td></tr>
+                            <tr><td>Research E</td><td>Org B</td><td>3333333333</td><td>suart</td></tr>
+                            <tr><td>Research F</td><td>Org C</td><td>4444444444</td><td>suart</td></tr>
+                            <tr><td>Research G</td><td>Org D</td><td>5555555555</td><td>suart</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div id="Health care" class="tab-content">
+                    <h2>Health care</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Organization/Person</th>
+                                <th>Phone no.</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            <tr><td>Research B</td><td>Org Y</td><td>1412535456</td><td>suart</td></tr>
+                            <tr><td>Research C</td><td>Org Z</td><td>7988898989</td><td>suart</td></tr>
+                            <tr><td>Research D</td><td>Org A</td><td>2222222222</td><td>suart</td></tr>
+                            <tr><td>Research E</td><td>Org B</td><td>3333333333</td><td>suart</td></tr>
+                            <tr><td>Research F</td><td>Org C</td><td>4444444444</td><td>suart</td></tr>
+                            <tr><td>Research G</td><td>Org D</td><td>5555555555</td><td>suart</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="IT" class="tab-content">
+                    <h2>IT</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Organization/Person</th>
+                                <th>Phone no.</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr><td>Research A</td><td>Org X</td><td>5416454455</td><td>suart</td></tr>
+                            <tr><td>Research B</td><td>Org Y</td><td>1412535456</td><td>suart</td></tr>
+                            <tr><td>Research C</td><td>Org Z</td><td>7988898989</td><td>suart</td></tr>
+                            <tr><td>Research D</td><td>Org A</td><td>2222222222</td><td>suart</td></tr>
+                            <tr><td>Research E</td><td>Org B</td><td>3333333333</td><td>suart</td></tr>
+                            <tr><td>Research F</td><td>Org C</td><td>4444444444</td><td>suart</td></tr>
+                            <tr><td>Research G</td><td>Org D</td><td>5555555555</td><td>suart</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="Agriculture" class="tab-content">
+                    <h2>Agriculture</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Organization/Person</th>
+                                <th>Phone no.</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr><td>Research A</td><td>Org X</td><td>5416454455</td><td>suart</td></tr>
+                            <tr><td>Research B</td><td>Org Y</td><td>1412535456</td><td>suart</td></tr>
+                            <tr><td>Research C</td><td>Org Z</td><td>7988898989</td><td>suart</td></tr>
+                            <tr><td>Research D</td><td>Org A</td><td>2222222222</td><td>suart</td></tr>
+                            <tr><td>Research E</td><td>Org B</td><td>3333333333</td><td>suart</td></tr>
+                            <tr><td>Research F</td><td>Org C</td><td>4444444444</td><td>suart</td></tr>
+                            <tr><td>Research G</td><td>Org D</td><td>5555555555</td><td>suart</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="Education and Skill" class="tab-content">
+                    <h2>Education and Skill</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Organization/Person</th>
+                                <th>Phone no.</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr><td>Research A</td><td>Org X</td><td>5416454455</td><td>suart</td></tr>
+                            <tr><td>Research B</td><td>Org Y</td><td>1412535456</td><td>suart</td></tr>
+                            <tr><td>Research C</td><td>Org Z</td><td>7988898989</td><td>suart</td></tr>
+                            <tr><td>Research D</td><td>Org A</td><td>2222222222</td><td>suart</td></tr>
+                            <tr><td>Research E</td><td>Org B</td><td>3333333333</td><td>suart</td></tr>
+                            <tr><td>Research F</td><td>Org C</td><td>4444444444</td><td>suart</td></tr>
+                            <tr><td>Research G</td><td>Org D</td><td>5555555555</td><td>suart</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </main>
+    
+        <script>
+            // Tab switching functionality
+            document.querySelectorAll('.tab-link').forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+    
+                    // Remove active class from all tabs
+                    document.querySelectorAll('.tab-link').forEach(btn => btn.classList.remove('active'));
+    
+                    // Hide all tab contents
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    
+                    // Add active class to clicked tab and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        </script>
+    </body>
+    </html>

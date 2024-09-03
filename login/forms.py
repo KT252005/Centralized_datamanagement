@@ -9,8 +9,7 @@ class SignupForm(forms.ModelForm):
         fields = ['first_name', 'last_name', 'email', 'username', 'password','role']
 
 
-class OrganizationForm(forms.ModelForm):
+class AllocationForm(forms.ModelForm):
     class Meta :
-        model = Organizations_data
-        fields = ['Gst_no','Company_name','Domain','Address','city','State','Pincode','contact_info']
-        
+        model =  Allocation
+        fields = ['user','Startup_name','contact_info']
