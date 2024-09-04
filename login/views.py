@@ -14,6 +14,7 @@ from tutorial.quickstart.serializers import GroupSerializer, UserSerializer
 from rest_framework import viewsets,permissions
 from django.contrib.auth.hashers import make_password,check_password
 from django.urls import reverse
+from django.shortcuts import render, redirect, get_object_or_404  # Add get_object_or_404 here
 
 # render  functions
 def login_home(request):
@@ -45,6 +46,10 @@ def  projects_page(request):
 
 def profile(request):
     return render(request,"viewprofile.html")
+
+
+def patent(request):
+    return render(request,"patent.html")
 
 def  details_profile(request):
     return render(request,"details_profile.html")
@@ -185,3 +190,12 @@ class AllocationViewSet(viewsets.ModelViewSet):
 #         return JsonResponse(data,status=200)
 #     except signup_data.DoesNotExist:
 #         return JsonResponse({'error': 'User not found'}, status=404)    
+
+
+def showdata(request,user_id):
+    user_profile = get_object_or_404(signup_data, id=user_id)
+    data = {
+        'username': user_profile.username,
+        'email': user_profile.email,
+    }
+    return JsonResponse(data)

@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patent Agents Table</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+header {
+            position: relative;
+            height: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            background-image: url("{% static 'img\patent.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PATENT</h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Patent Agent Number</th>
+                <th>Name</th>
+                <th>Principal Place of Business</th>
+                <th>Mobile Number/Email</th>
+                <th>City/State</th>
+                <th>Specialization</th>
+                <th>IP Mitra registration date </th>
+                <th>Agent continued upto</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2525</td></td>
+                <td>John Smith</td>
+                <td>123 Innovation Ave, City</td>
+                <td>555-1234/john.smith@example.com</td>
+                <td>Chennai/Tamil Nadu</td>
+                <td>BIOTECHNOLOGY</td>
+                <td>28/09/2022</td>
+                <td>31/12/2029</td>
+                <td>2521 days left</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Alice Johnson</td>
+                <td>456 Patent St, Town</td>
+                <td>555-5678</td>
+                <td>alice.johnson@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Robert Brown</td>
+                <td>789 IP Rd, City</td>
+                <td>555-8765</td>
+                <td>robert.brown@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Emily Davis</td>
+                <td>101 Rights Blvd, Metropolis</td>
+                <td>555-4321</td>
+                <td>emily.davis@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>Michael Wilson</td>
+                <td>202 Patent Plaza, City</td>
+                <td>555-6789</td>
+                <td>michael.wilson@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td>Jessica Lee</td>
+                <td>303 IP Street, Town</td>
+                <td>555-3456</td>
+                <td>jessica.lee@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>007</td>
+                <td>David Martinez</td>
+                <td>404 Legal Ave, City</td>
+                <td>555-9876</td>
+                <td>david.martinez@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td>Sarah Wilson</td>
+                <td>505 Innovation Blvd, Town</td>
+                <td>555-6543</td>
+                <td>sarah.wilson@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>009</td>
+                <td>James Anderson</td>
+                <td>606 Tech Lane, Metropolis</td>
+                <td>555-3210</td>
+                <td>james.anderson@example.com</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,72 @@
             padding: 0;
             background-color: #f9f9f9;
         }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
+.header-section {
+    position: relative;
+    background-image: url("{% static 'img\patent_faci.jpg' %}"); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: right;
+}
+
+.header-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #ff7f00; /* Highlight color for I, P, R */
+}
+
+        header {
+            position: relative;
+            height: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            background-image: url("iprhome.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Lucida Sans', sans-serif;
+        }
         .navbar {
             display: flex;
             justify-content: space-around;
@@ -146,6 +213,13 @@
     </style>
 </head>
 <body>
+    <header class="header-section">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1><span class="highlight">I</span>ntellectual <span class="highlight">P</span>roperty <span class="highlight">R</span>ights</h1>
+        </div>
+    </header>
+   
 <!-- IPR Information Section -->
     <div class="ipr-info">
         <h3>Overview</h3>
@@ -153,16 +227,16 @@
     </div>
     <div class="facilitator-section">
         <div class="facilitator-card">
-            <img src="https://via.placeholder.com/800x400" alt="Patent Facilitator">
+            <img src="{% static 'img\iprhome2.jpg' %}" alt="Patent Facilitator">
             <div class="facilitator-content">
                 <div>
                     <h2>Patent Facilitator</h2>
-                    <button>VIEW MORE</button>
+                    <button><a href="{% url "patent" %}">VIEW MORE</button>
                 </div>
             </div>
         </div>
         <div class="facilitator-card">
-            <img src="https://via.placeholder.com/800x400" alt="Trademark Facilitator">
+            <img src="{% static 'img\fund13.png' %}"alt="Trademark Facilitator">
             <div class="facilitator-content">
                 <div>
                     <h2>Trademark Facilitator</h2>

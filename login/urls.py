@@ -22,6 +22,8 @@ urlpatterns = [
     path("profile/",views.profile,name="profile"),
     path("profile/details",views.details_profile,name="details_profile"),
     path("ipr/",views.ipr,name="ipr"),
+    path("patent/",views.patent,name="patent"),
+    path('api/user-profile/<int:user_id>/',views.showdata ,name="userdata"),
     
 
     #for api testing
