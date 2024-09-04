@@ -13,11 +13,19 @@ urlpatterns = [
     path('',views.access,name="access"),
     path("user/",views.user,name="user"),
     # routing the register function
-    path('registration/',views.organization_dash,name="org_dash"),
+    # path('registration/',views.organization_dash,name="org_dash"),
     path('fund/',views.fund,name="fund"),
-    path('login/login_user',views.login_user,name="login_user"),
+    path('login_user/',views.login_user,name="login_user"),
     path("startup/",views.startup_page,name="startup_page"),
     path("projects/",views.projects_page,name="project_page"),
+    path("profile/",views.profile,name="profile"),
+    path("profile/details",views.details_profile,name="details_profile"),
+    
+    
+    
+    
+    
+    #for api testing
     path('rest/', include(router.urls)),
 #     path('api/user/<str:username>/profile', user_info_api, name='user-info-api'),
     

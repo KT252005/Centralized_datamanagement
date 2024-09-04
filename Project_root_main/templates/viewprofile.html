@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Page</title>
+    <link rel="stylesheet" href={%static "style1.css"%}>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <img src="https://startupindia.gov.in/content/sih/en/img/logo_startup_india.svg" alt="logo" class="logo">
+            <nav>
+                
+            </nav>
+            <div class="header-right">
+                <button class="dashboard-button">Dashboard</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="profile-header">
+        <div class="profile-info">
+            <div class="profile-photo">
+                <img src="https://via.placeholder.com/100" alt="Profile Photo">
+            </div>
+            <div class="user-info">
+                <h2 class="username">Username</h2>
+                <p class="email">Email id</p>
+                <p class="engagement-level">Engagement Level:</p>
+                <p class="active-since">Active on Portal Since: DD/MM/YYYY</p>
+                
+        </div>
+        <div class="profile-tabs">
+            <button class="tab-button active">Profile</button>
+            <button class="tab-button">Gallery</button>
+        </div>
+    </section>
+    
+        
+    
+
+    <section class="profile-details">
+        <h3>Startup Details</h3>
+        <p>Startup description here...</p>
+        <div class="details-grid">
+            <div class="detail-item">
+                
+                <h3>STAGE</h3>
+                <p>Ideation</p>
+            </div>
+            <div class="detail-item">
+
+                <h3>FOCUS INDUSTRY</h3>
+                <p>Advertising</p>
+            </div>
+            <div class="detail-item">
+
+                <h3>FOCUS SECTOR</h3>
+                <p>Online Classified</p>
+            </div>
+            <div class="detail-item">
+               
+                <h3>SERVICE AREA(S)</h3>
+                <p>Governments, Hyperlocal</p>
+            </div>
+            <div class="detail-item">
+
+                <h3>LOCATION</h3>
+                <p>Chandigarh, Chandigarh</p>
+            </div>
+           <div class="detail-item">
+                    
+                    <h3>NO OF ACTIVE YEARS</h3>
+                    </div>
+
+
+            
+        </div>
+    </section>
+</body>
+
+</html>

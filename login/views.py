@@ -37,6 +37,11 @@ def startup_page(request):
 def  projects_page(request):
     return render(request,"project.html")
 
+def profile(request):
+    return render(request,"viewprofile.html")
+
+def  details_profile(request):
+    return render(request,"details_profile.html")
 #from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.shortcuts import render
@@ -118,7 +123,7 @@ def login_user(request):
                 request.session['username'] = user.username
                 request.session['role'] = user.role
                 if user_type == 'user':
-                    return JsonResponse({'success': True, 'redirect_url': '/'})
+                    return JsonResponse({'success': True, 'redirect_url': '/profile/'})
                 elif user_type == 'admin':
                     return JsonResponse({'success': True, 'redirect_url': '/admin/'})
                 else:

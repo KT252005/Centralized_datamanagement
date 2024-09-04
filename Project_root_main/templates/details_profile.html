@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Profile Form</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        .form-step-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form-step-header div {
+            display: inline-block;
+            text-align: center;
+            width: 25%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+        }
+        .form-step-header .active-step {
+            background-color: #007bff;
+            color: white;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .form-buttons button[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <!-- Step Indicators -->
+    <div class="form-step-header">
+        <div class="active-step">Step 1<br>About Startup</div>
+        <div>Step 2<br>Contact Info</div>
+        <div>Step 3<br>Category</div>
+        <div>Step 4<br>Your Interest</div>
+    </div>
+
+    <!-- Step 1: About Startup -->
+    <div class="form-step active" id="step-1">
+        <div class="form-group">
+            <label for="startup-name">Startup Name</label>
+            <input type="text" id="startup-name" placeholder="Enter your startup name">
+        </div>
+        <div class="form-group">
+            <label for="startup-description">Description</label>
+            <input type="text" id="startup-description" placeholder="Describe your startup">
+        </div>
+        <div class="form-buttons">
+            <button type="button" disabled>Previous</button>
+            <button type="button" onclick="nextStep()">Next</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Contact Info -->
+    <div class="form-step" id="step-2">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" placeholder="Enter your mobile number">
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <select id="state">
+                <option value="">Select</option>
+                <!-- Add your state options here -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <select id="city">
+                <option value="">Select</option>
+                <!-- Add your city options here -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input type="url" id="website" placeholder="Enter your website URL">
+        </div>
+        <div class="form-group">
+            <label for="mobile-app">Mobile App Link</label>
+            <input type="url" id="mobile-app" placeholder="Enter your mobile app link">
+        </div>
+        <div class="form-buttons">
+            <button type="button" onclick="previousStep()">Previous</button>
+            <button type="button" onclick="nextStep()">Next</button>
+        </div>
+    </div>
+
+    <!-- Step 3: Category -->
+    <div class="form-step" id="step-3">
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="">Select</option>
+                <!-- Add category options here -->
+            </select>
+        </div>
+        <div class="form-buttons">
+            <button type="button" onclick="previousStep()">Previous</button>
+            <button type="button" onclick="nextStep()">Next</button>
+        </div>
+    </div>
+
+    <!-- Step 4: Your Interest -->
+    <div class="form-step" id="step-4">
+        <div class="form-group">
+            <label for="interest">Your Interest</label>
+            <input type="text" id="interest" placeholder="Enter your interest">
+        </div>
+        <div class="form-buttons">
+            <button type="button" onclick="previousStep()">Previous</button>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function showStep(step) {
+        document.querySelectorAll('.form-step').forEach((formStep, index) => {
+            formStep.classList.remove('active');
+            if (index === step - 1) {
+                formStep.classList.add('active');
+            }
+        });
+        document.querySelectorAll('.form-step-header div').forEach((headerStep, index) => {
+            headerStep.classList.remove('active-step');
+            if (index === step - 1) {
+                headerStep.classList.add('active-step');
+            }
+        });
+    }
+
+
+
+    function nextStep() {
+        if (currentStep < totalSteps) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    }
+
+    function previousStep() {
+        if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    }
+
+    showStep(currentStep);
+
+    document.getElementById('form-container').addEventListener('submit', function(event) {
+        event.preventDefault();
+        console.log("Form submitted");  
+        let formData = {
+                gst_no: document.getElementById('gst').value,
+                company_name: document.getElementById('company-name').value,
+                domain: document.getElementById('domain').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                pincode: document.getElementById('pincode').value,
+                contact_info: document.getElementById('contact').value
+            };
+       
+        console.log("Data to send:", formData); 
+        fetch('/Registration.html/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',  // Ensure JSON content type is set
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value  // Correct way to include CSRF token
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            if (data.success) {
+                alert(data.message); 
+                window.location.href = data.redirect_url;  // Redirect to the URL provided in the response
+            } else {
+                alert(data.error);  // Show error message
+            } 
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
+
