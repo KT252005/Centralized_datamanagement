@@ -27,16 +27,16 @@ body {
 /* Organization Section Styling */
 .organization-section {
 
-    padding: 50px;
-    background-color: var(--gray-blue);
+    padding: 40px;
+    background-color:#D7E4E9 ;
     border-radius: 8px;
-    margin: 20px 0;
+    margin: 15px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .organization-title h2 {
     text-align: center;
-    color: var(--navy);
+    color: Black;
     font-size: 2.5rem;
     margin-top: 45px;
 }
@@ -63,7 +63,7 @@ body {
 .benefits-table {
     flex: 1;
     max-width: 50%;
-    background-color: var(--light-blue);
+    background-color: #2E3A47;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -107,7 +107,7 @@ body {
     left: 12.5%;
     transform: translate(-50%, -50%);
     padding: 35px 30px;
-    background-color: var(--navy);
+    background-color: Black;
     color: var(--off-white);
     border: none;
     border-radius: 5px;
@@ -124,7 +124,7 @@ body {
 header {
     background-color: #ffffff;
     border-bottom: 2px solid #dddddd;
-    padding: 30px;
+    padding: 25px;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -137,8 +137,8 @@ header {
 header .logo img {
     height: 70px;
     position: absolute;
-    left: 20px;
-    top: 10px;
+    left: 0px;
+    top: 0px;
 }
 
 nav ul {
@@ -256,7 +256,7 @@ nav ul li a:hover {
     left: 12.5%;
     transform: translate(-50%, -50%);
     padding: 20px 30px;
-    background-color: navy ;
+    background-color: rgb(1,1,1) ;
     color: var(--off-white);
     border: none;
     border-radius: 5px;
@@ -384,7 +384,7 @@ footer {
                 <li><a href="#home">Home</a></li>
                 <li><a href="#organizations">Organizations</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#patents">Patents</a></li>
+                <li><a href="#IPR">IPR</a></li>
                 <li><a href="#startups">Startups</a></li>
                 <li><a href="#funding">Funding</a></li>
                 <li><a href="#collaborations">Collaborations</a></li>
@@ -452,19 +452,20 @@ footer {
 
    <section id="projects" class="content-section">
         <h2>Projects</h2>
-        <a href="/projects/" class="fund-button">Projects</a>
+        <a href="/projects/" class="fund-button">View More</a>
     </section>
     <section id="patents" class="content-section">
-        <h2>Patents</h2>
-        <p>Content about patents...</p>
+        <h2>IPR</h2>
+        <a href="{% url 'ipr' %}" class="fund-button">View More</a>
+       
     </section>
     <section id="/startups/" class="content-section">
         <h2>Startups</h2>
-        <a href="/startup/" class="fund-button">Startups</a>
+        <a href="/startup/" class="fund-button">View More</a>
     </section>
     <section id="funding" class="content-section">
         <h2>Funding</h2>
-        <a href="/fund/" class="fund-button">Funds</a>
+        <a href="/fund/" class="fund-button">View More</a>
     </section>
     <section id="collaborations" class="content-section">
         <h2>Collaborations</h2>

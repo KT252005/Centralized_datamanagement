@@ -16,6 +16,12 @@ from django.contrib.auth.hashers import make_password,check_password
 from django.urls import reverse
 
 # render  functions
+def login_home(request):
+    return render(request,"Home_Dashboard.html")
+
+def ipr(request):
+    return render(request,"ipr.html")
+
 def user(request):
     return render(request,"base.html")
 

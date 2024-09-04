@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patent and Trademark Facilitator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .facilitator-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        .facilitator-card {
+            position: relative;
+            width: 45%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .facilitator-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .facilitator-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .facilitator-content:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .facilitator-content h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .facilitator-content button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .ipr-info {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .ipr-info h3 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .ipr-info p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .stats-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-box.blue {
+            background-color: #e6f2ff;
+        }
+
+        .stats-box.orange {
+            background-color: #fff4e6;
+        }
+
+        .stats-box h3 {
+            font-size: 32px;
+            margin: 0;
+            color: #333;
+        }
+
+        .stats-box p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<!-- IPR Information Section -->
+    <div class="ipr-info">
+        <h3>Overview</h3>
+        <p>Intellectual Property Rights (IPR) are legal protections for creations like inventions, designs, trademarks, and copyrights. They provide creators with exclusive rights to use, produce, and sell their work, preventing unauthorized use by others. IPR promotes innovation by rewarding creators with control over their creations. Common types include patents, trademarks, copyrights, and trade secrets. Proper management of IPR helps businesses safeguard their competitive edge and monetize their innovations.</p>
+    </div>
+    <div class="facilitator-section">
+        <div class="facilitator-card">
+            <img src="https://via.placeholder.com/800x400" alt="Patent Facilitator">
+            <div class="facilitator-content">
+                <div>
+                    <h2>Patent Facilitator</h2>
+                    <button>VIEW MORE</button>
+                </div>
+            </div>
+        </div>
+        <div class="facilitator-card">
+            <img src="https://via.placeholder.com/800x400" alt="Trademark Facilitator">
+            <div class="facilitator-content">
+                <div>
+                    <h2>Trademark Facilitator</h2>
+                    <button>KNOW MORE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="stats-section">
+        <div class="stats-box blue">
+            <h3>54454</h3>
+            <p>No. of Patents Filed</p>
+        </div>
+        <div class="stats-box orange">
+            <h3>5454</h3>
+            <p>No. of Patents Approved</p>
+        </div>
+        <div class="stats-box blue">
+            <h3>22222</h3>
+            <p>No. of Trademarks Filed</p>
+        </div>
+        <div class="stats-box orange">
+            <h3>25666</h3>
+            <p>No. of Trademarks Approved</p>
+        </div>
+    </div>
+
+</body>
+</html>
