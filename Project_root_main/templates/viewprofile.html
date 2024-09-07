@@ -28,8 +28,8 @@
                 <img src="https://via.placeholder.com/100" alt="Profile Photo">
             </div>
             <div class="user-info">
-                <h2 id="username">Username: </h2>
-                <p id="email">Email: </p>
+                <h2 id="username">Username: {{username}}</h2>
+                <p id="email">Email: {{email}} </p>
 
                 <p class="engagement-level">Engagement Level:</p>
                 <p class="active-since">Active on Portal Since: DD/MM/YYYY</p>
@@ -82,18 +82,6 @@
             
         </div>
     </section>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('http://127.0.0.1:8000/api/user-profile/1/')  // Replace with the appropriate user ID
-                .then(response => response.json())
-                .then(data => {
-                    // Update elements with IDs using fetched data
-                    document.getElementById('username').textContent = "Username: " + data.username;
-                    document.getElementById('email').textContent = "Email: " + data.email;
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        });
-    </script>
 
 </body>
 

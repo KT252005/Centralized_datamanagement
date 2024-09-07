@@ -17,26 +17,24 @@ from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404  # Add get_object_or_404 here
 
 # render  functions
-def login_home(request):
-    return render(request,"Home_Dashboard.html")
+
+
+def home_new(request):
+    return render(request,"login_home.html")
 
 def ipr(request):
     return render(request,"ipr.html")
 
-def user(request):
-    return render(request,"base.html")
 
 def fund(request):
     return render(request,"fund.html")
 
-def home(request):
+def login(request):
     return render(request,"index.html")
 
-def access(request):
+def home(request):
       return render(request,"Home_Dashboard.html")
 
-def signup(request):
-    return render(request,"base.html")
 
 def startup_page(request):
     return render(request,"startup.html")
@@ -44,14 +42,14 @@ def startup_page(request):
 def  projects_page(request):
     return render(request,"project.html")
 
-def profile(request):
-    return render(request,"viewprofile.html")
+# def profile(request):
+#     return render(request,"viewprofile.html")
 
 
 def patent(request):
     return render(request,"patent.html")
 
-def  details_profile(request):
+def  details_form(request):
     return render(request,"details_profile.html")
 #from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -133,8 +131,12 @@ def login_user(request):
                 request.session['user_id'] = user.id
                 request.session['username'] = user.username
                 request.session['role'] = user.role
+                
+                
+                print(request.session.items())
+                
                 if user_type == 'user':
-                    return JsonResponse({'success': True, 'redirect_url': '/profile/'})
+                    return JsonResponse({'success': True, 'redirect_url': 'home/new'})
                 elif user_type == 'admin':
                     return JsonResponse({'success': True, 'redirect_url': '/admin/'})
                 else:
@@ -192,10 +194,24 @@ class AllocationViewSet(viewsets.ModelViewSet):
 #         return JsonResponse({'error': 'User not found'}, status=404)    
 
 
-def showdata(request,user_id):
-    user_profile = get_object_or_404(signup_data, id=user_id)
-    data = {
-        'username': user_profile.username,
-        'email': user_profile.email,
-    }
-    return JsonResponse(data)
+
+def profile_view(request):
+    # for user_id and username are in session retrieve and send to destination html with parameter
+    if 'user_id' in request.session and 'username' in request.session:
+        user_id = request.session['user_id']
+        username = request.session['username']
+        
+        try:
+            user = signup_data.objects.get(id=user_id)
+            
+            data = {
+                "username": user.username,
+                "email": user.email,
+            }
+            return render(request, 'viewprofile.html', data)
+        
+        except signup_data.DoesNotExist:
+            return JsonResponse({'error': 'User not found'})
+    else:
+        # If session data is missing, redirect to login or show an error
+        return JsonResponse({'error': 'User is not logged in'})
